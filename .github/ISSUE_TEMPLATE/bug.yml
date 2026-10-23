@@ -1,0 +1,57 @@
+name: Bug report
+description: The log did the wrong thing.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Entries stay in the browser. Describe the bug with a fake entry, not a real work log.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What broke?
+      options:
+        - Adding an entry
+        - Editing or removing an entry
+        - The day view
+        - Copy as Markdown
+        - Entries saved in this browser
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      placeholder: |
+        1. Add "Shipped the settings page".
+        2. Copy the day as Markdown.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: Safari 18 on macOS
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you submit
+      options:
+        - label: This report uses a fake entry and does not include a real work log.
+          required: true

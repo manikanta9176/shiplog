@@ -1,0 +1,27 @@
+name: Change request
+description: Ask for a change to the end-of-day log.
+title: "change: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: What should the log do?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example day
+      description: Use fake entries. Say what the copied Markdown should look like if that matters.
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you submit
+      options:
+        - label: I understand entries stay in this browser.
+          required: true
+        - label: This request contains no real work log.
+          required: true
